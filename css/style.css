@@ -17,10 +17,14 @@ a {
   color: inherit;
 }
 
-/* --- PAGE (фон общий для header + hero) --- */
-.page {
+.container {
+  width: 100%;
+  height: auto;
+}
+
+.main__page {
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgba(93,169,233,0.9), rgba(255,255,255,0.9)),
+  background: linear-gradient(to bottom, rgba(130,178,233,1), rgba(255,255,255,1)),
               url("../img/eagle.png") no-repeat center center;
   background-size: cover;
 }
@@ -90,7 +94,7 @@ a {
 }
 
 .hero__card {
-  width: 140px;
+  width: 242px;
   margin: 20px 0;
   z-index: 1;
 }

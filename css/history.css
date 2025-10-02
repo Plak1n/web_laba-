@@ -1,0 +1,79 @@
+/* --- HISTORY --- */
+.history {
+  text-align: center;
+  padding: 80px 60px;
+  background: #fff;
+}
+
+.history__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.history__line {
+  width: 40px;
+  height: 2px;
+  background: #e74c3c;
+  margin: 10px auto 30px;
+}
+
+.history__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #777;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.history__cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.history__card {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.history__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Первый блок с градиентом */
+.history__card--team {
+  background: url("../img/history-1.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.history__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(255,0,150,0.6), rgba(255,255,0,0.6));
+}
+
+.history__card-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+}

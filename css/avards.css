@@ -1,0 +1,22 @@
+.avards {
+    display: flex;
+    flex-direction: row;
+    height: 213px;
+    color:white;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    background: rgba(174, 204, 239, 1);
+}
+
+.avards__projects-number {
+    padding-bottom: 10px;
+    line-height: 100%;
+    font-size: 54px;
+    font-weight: 800;    
+}
+
+.avards__projects-words {
+    font-size: 11px;
+    font-weight: 500;
+}

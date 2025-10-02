@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>НекстФин</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/history.css">
+  <link rel="stylesheet" href="css/avards.css">
 </head>
 <body>
-  <div class="page">
+  <div class="container">
+  <div class="main__page">
     <header class="header">
       <div class="header__logo">НекстФин</div>
       <nav class="header__nav">
@@ -26,8 +29,53 @@
       <div class="hero__line"></div>
       <button class="hero__button" id="ctaBtn">ОФОРМИТЬ КАРТУ</button>
     </section>
-  </div>
+  </div>\
+  <section class="history">
+      <h2 class="history__title">НАША ИСТОРИЯ</h2>
+      <div class="history__line"></div>
+      <p class="history__subtitle">
+        Компания «НекстФин» была основана в 2025 году, чтобы сделать современные цифровые финансовые услуги доступными и удобными для каждого пользователя.
+      </p>
 
-  <script src="js/script.js"></script>
+      <div class="history__cards">
+        <div class="history__card history__card--team">
+          <div class="history__overlay">
+            <span class="history__card-text">SUPER TEAM</span>
+          </div>
+        </div>
+
+        <div class="history__card">
+          <img src="img/history-2.png" alt="Команда" class="history__image">
+        </div>
+
+        <div class="history__card">
+          <img src="img/history-3.png" alt="Офис" class="history__image">
+        </div>
+      </div>
+    </section>
+    <section class="avards">
+        <div class="avards__projects">
+            <p class="avards__projects-number">42</p>
+            <p class="avards__projects-words">ПРОЕКТОВ</p>
+        </div>
+        <div class="avards__projects">
+            <p class="avards__projects-number">123</p>
+            <p class="avards__projects-words">СЧАСТЛИВЫХ КЛИЕНТОВ</p>
+        </div>
+        <div class="avards__projects">
+            <p class="avards__projects-number">15</p>
+            <p class="avards__projects-words">НАГРАД</p>
+        </div>
+        <div class="avards__projects">
+            <p class="avards__projects-number">99</p>
+            <p class="avards__projects-words">ЧАШЕК КОФЕ</p>
+        </div>
+        <div class="avards__projects">
+            <p class="avards__projects-number">24</p>
+            <p class="avards__projects-words">СОТРУДНИКОВ</p>
+        </div>
+    </section>
+</div>
+<script src="js/script.js"></script>
 </body>
 </html>
