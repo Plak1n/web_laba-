@@ -27,6 +27,24 @@
       <div class="hero__line"></div>
       <button class="hero__button" id="ctaBtn">ОФОРМИТЬ КАРТУ</button>
     </section>
+   <div class="modal" id="modal">
+    <div class="modal__content">
+      <span class="modal__close" id="closeModal">&times;</span>
+      <h2>Оформление карты</h2>
+      <form class="modal__form">
+        <label for="name">Имя</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <button type="submit" class="modal__submit">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
   </div>\
   <section class="history">
       <h2 class="history__title">НАША ИСТОРИЯ</h2>
@@ -154,10 +172,9 @@
           <a href="#"><img src="img/facebook-app-symbol 4.png" alt="youtube"></a>
         </div>
 
-        <form class="footer__form">
-          <input type="email" placeholder="Окно обратной связи" required>
-          <button type="submit">ОТПРАВИТЬ</button>
-        </form>
+        
+        <button type="submit" class="footer__feedback-btn" id="openFeedbackBtn">ПОДДЕРЖКА</button>
+        
       </div>
 
       <!-- Правая часть -->
@@ -172,7 +189,25 @@
       <p>© 2025 НекстФин | <a href="#">Компания</a></p>
     </div>
   </footer>
+  <div class="modal" id="feedbackModal">
+  <div class="modal__content">
+    <span class="modal__close" id="closeFeedbackModal">&times;</span>
+    <h2>Обратная связь</h2>
+    <form class="modal__form" id="feedbackForm">
+      <label for="userName">Имя</label>
+      <input type="text" id="userName" name="name" required>
+
+      <label for="userEmail">Email</label>
+      <input type="email" id="userEmail" name="email" required>
+
+      <label for="userMessage">Сообщение</label>
+      <textarea id="userMessage" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="modal__submit">Отправить</button>
+    </form>
   </div>
+</div>  
+</div>
 <script src="js/script.js"></script>
 </body>
 </html>
