@@ -1,4 +1,10 @@
 /* --- GLOBAL --- */
+@import url("avards.css"); 
+@import url("history.css"); 
+@import url("service.css");
+@import url("questions.css");
+@import url("footer.css");
+
 * {
   margin: 0;
   padding: 0;
