@@ -114,3 +114,26 @@
   border-color: #6dc3b0;
   outline: none;
 }
+
+.modal__success {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 2000;
+}
+
+.modal__success.show {
+  opacity: 1;
+  visibility: visible;
+  bottom: 50px;
+}

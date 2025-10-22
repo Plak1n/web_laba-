@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.getElementById('userMessage').value;
 
     // создаём mailto-ссылку
-    const mailtoLink = `mailto:info@nextfin.by?subject=Обратная связь от ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AEmail: ${encodeURIComponent(email)}`;
+    const mailtoLink = `mailto:jamaraxi806@gmail.com?subject=Обратная связь от ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AEmail: ${encodeURIComponent(email)}`;
 
     // открываем почтовое приложение
     window.location.href = mailtoLink;
