@@ -6,6 +6,7 @@
 @import url("footer.css");
 @import url("modal.css");
 
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +14,7 @@
 }
 
 body {
-  font-family: Inter, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
   background: white; /* для остальных страниц */
@@ -31,8 +32,12 @@ a {
 
 .main__page {
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgba(130,178,233,1), rgba(255,255,255,1)),
-              url("../img/eagle.png") no-repeat center center;
+  background-image: url('../img/eagle.png'), linear-gradient(#82B2E9,#FFFFFF) ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background: linear-gradient(to bottom, rgba(130,178,233,1), rgba(255,255,255,1)),
+              url("../img/eagle.png") no-repeat center center; */
   background-size: cover;
 }
 
@@ -52,7 +57,7 @@ a {
   font-family: 'Inter', sans-serif;
   font-weight: 900;
   font-size: 22px;
-  letter-spacing: 4%;
+  letter-spacing: 1px;
   color: #fff;
 }
 
@@ -95,14 +100,13 @@ a {
   font-family: 'Kaushan Script', cursive;
   font-weight: 400;
   font-size: 56px;
-  margin-bottom: 20px;
   color: #fff;
   z-index: 1;
 }
 
 .hero__card {
   width: 242px;
-  margin: 20px 0;
+  margin-bottom: 20px;
   z-index: 1;
 }
 
