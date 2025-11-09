@@ -42,20 +42,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === modal) modal.classList.remove('show');
   });
 
-  // обработка формы — через mailto
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('userName').value;
-    const email = document.getElementById('userEmail').value;
-    const message = document.getElementById('userMessage').value;
-
-    // создаём mailto-ссылку
-    const mailtoLink = `mailto:jamaraxi806@gmail.com?subject=Обратная связь от ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AEmail: ${encodeURIComponent(email)}`;
-
-    // открываем почтовое приложение
-    window.location.href = mailtoLink;
-
-    modal.classList.remove('show');
-    form.reset();
-  });
 });

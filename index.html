@@ -32,18 +32,24 @@
     <div class="modal__content">
       <span class="modal__close" id="closeModal">&times;</span>
       <h2>Оформление карты</h2>
-      <form class="modal__form">
-        <label for="name">Имя</label>
-        <input type="text" id="name" name="name" required>
+       <form class="modal__form" 
+          action="https://formsubmit.co/jamaraxi806@gmail.com" 
+          method="POST">
+      
+      <input type="hidden" name="_subject" value="Заявка на оформление карты НекстФин">
+      <input type="hidden" name="_captcha" value="false">
+      
+      <label for="name">Имя</label>
+      <input type="text" id="name" name="name" required>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
 
-        <label for="phone">Телефон</label>
-        <input type="tel" id="phone" name="phone" required>
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" name="phone" required>
 
-        <button type="submit" class="modal__submit">Отправить заявку</button>
-      </form>
+      <button type="submit" class="modal__submit">Отправить заявку</button>
+    </form>
     </div>
   </div>
   </div>\
@@ -194,7 +200,15 @@
   <div class="modal__content">
     <span class="modal__close" id="closeFeedbackModal">&times;</span>
     <h2>Обратная связь</h2>
-    <form class="modal__form" id="feedbackForm">
+   <form class="modal__form" 
+          id="feedbackForm"
+          action="https://formsubmit.co/jamaraxi806@gmail.com" 
+          method="POST">
+      
+      <!-- Скрытые параметры -->
+      <input type="hidden" name="_subject" value="Обратная связь с сайта НекстФин">
+      <input type="hidden" name="_captcha" value="false">
+      
       <label for="userName">Имя</label>
       <input type="text" id="userName" name="name" required>
 
