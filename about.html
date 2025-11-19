@@ -10,24 +10,7 @@
 </head>
 <body>
   <div class="container">
-    <!-- Хедер (такой же, как мы делали) -->
-    <header class="header">
-      <div class="header__logo">
-        <a href="index.html">НекстФин</a>
-      </div>
-      <nav class="header__nav" id="nav">
-        <a class="header__link" href="about.html">О КОМПАНИИ</a>
-        <a class="header__link" href="index.html#services">УСЛУГИ</a>
-        <a class="header__link" href="index.html#contacts">КОНТАКТЫ</a>
-        <div class="header__search">
-          <img src="img/search 1.png" alt="search">
-        </div>
-      </nav>
-      <button class="header__burger-btn" id="burger">
-        <span></span><span></span><span></span>
-      </button>
-    </header>
-
+       
     <!-- УЛУЧШЕННЫЙ КОНТЕНТ СТРАНИЦЫ -->
     <main class="about-page">
       <!-- Секция 1: Hero-баннер -->
@@ -80,7 +63,60 @@
 
     <!-- Футер (такой же, как на главной) -->
     <footer class="footer" id="contacts">
-      <!-- ... (скопируй сюда свой футер из index.html) ... -->
+       <div class="footer__container">
+      <!-- Левая часть -->
+      <div class="footer__info">
+        <h2 class="footer__logo">НекстФин</h2>
+        <p class="footer__text">
+          Компания «НекстФин» была основана в 2025 году, чтобы сделать современные цифровые финансовые услуги
+          доступными и удобными для каждого пользователя.
+        </p>
+
+        <p class="footer__phone">+375 29 111-22-33</p>
+
+        <div class="footer__socials">
+          <a href="#"><img src="img/facebook-app-symbol 1.png" alt="facebook"></a>
+          <a href="#"><img src="img/facebook-app-symbol 2.png" alt="twitter"></a>
+          <a href="#"><img src="img/facebook-app-symbol 3.png" alt="linkedin"></a>
+          <a href="#"><img src="img/facebook-app-symbol 4.png" alt="youtube"></a>
+        </div>
+
+        
+        <button type="submit" class="footer__feedback-btn" id="openFeedbackBtn">ПОДДЕРЖКА</button>
+        
+      </div>
+
+      <!-- Правая часть -->
+      <div class="footer__map">
+        <h3>INSTAGRAM</h3>
+        <img src="img/map.png" alt="map">
+        <a href="#" class="footer__map-link">смотреть еще</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2025 НекстФин | <a href="#">Компания</a></p>
+    </div>
+  </footer>
+  <div class="modal" id="feedbackModal">
+  <div class="modal__content">
+    <span class="modal__close" id="closeFeedbackModal">&times;</span>
+    <h2>Обратная связь</h2>
+   <form class="modal__form" 
+      id="cardForm">
+  <input type="hidden" name="_subject" value="Заявка на оформление карты НекстФин">
+  <input type="hidden" name="_captcha" value="false">
+
+  <label for="name">Имя</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="phone">Телефон</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <button type="submit" class="modal__submit">Отправить заявку</button>
     </footer>
   </div>
   <script src="js/script.js"></script>
