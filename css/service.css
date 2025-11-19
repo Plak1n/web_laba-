@@ -1,8 +1,7 @@
 .service {
-    padding-top: 90px;
-    padding-bottom: 150px;
+  padding-top: 90px;
+  padding-bottom: 150px;
 }
-
 
 .service__title {
   text-align: center;
@@ -12,7 +11,6 @@
   text-transform: uppercase;
   margin-bottom: 20px;
 }
-
 
 .service__line {
   width: 50px;
@@ -47,7 +45,6 @@
   justify-self: center;
 }
 
-/* основной блок для иконки и текста */
 .services__content {
   display: flex;
   align-items: flex-start;
@@ -85,37 +82,67 @@
   margin: 0;
 }
 
-/* адаптив */
-@media (max-width: 900px) {
+
+/* --- НОВЫЕ И УЛУЧШЕННЫЕ МЕДИА-ЗАПРОСЫ --- */
+
+/* Для небольших десктопов и крупных планшетов (до 1200px) */
+@media (max-width: 1200px) {
   .services__grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px; /* Уменьшаем горизонтальный отступ */
+  }
+}
+
+/* Планшеты (до 992px) */
+@media (max-width: 992px) {
+  .service {
+    padding-top: 70px;
+    padding-bottom: 120px;
+  }
+  
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr); /* Перестраиваем в 2 колонки */
+    gap: 40px;
   }
 
   .services__item--center {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* Центральный элемент на всю ширину */
     justify-self: center;
   }
 }
 
-@media (max-width: 600px) {
+/* Мобильные телефоны (до 768px) */
+@media (max-width: 768px) {
+  .service {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+
+  .service__title {
+    font-size: 24px; /* Уменьшаем заголовок */
+  }
+  
+  .service__line {
+    margin-bottom: 40px;
+  }
+
   .services__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Перестраиваем в 1 колонку */
+    gap: 35px;
   }
 
   .services__divider {
-    display: none;
+    display: none; /* Разделитель в одной колонке не нужен */
   }
 
   .services__item--center {
-    grid-column: auto;
+    grid-column: auto; /* Сбрасываем особое позиционирование */
   }
 
+  /* На мобильных лучше, если иконка и текст будут по центру блока */
   .services__content {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .services__text-group {
-    text-align: left;
+    flex-direction: column; /* Иконка над текстом */
+    align-items: center;
+    text-align: center;
   }
 }
+

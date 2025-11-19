@@ -6,6 +6,104 @@
 @import url("footer.css");
 @import url("modal.css");
 
+html {
+  scroll-behavior: smooth;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.header__burger-btn {
+  display: none; /* По умолчанию скрыто */
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 15; /* Выше чем .header__nav */
+}
+
+.header__burger-btn span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  left: 5px;
+  background-color: #fff; /* Белые "палочки" под цвет твоего меню */
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.header__burger-btn span:nth-child(1) {
+  transform: translateY(-10px);
+}
+
+.header__burger-btn span:nth-child(3) {
+  transform: translateY(10px);
+}
+
+/* Анимация в "крестик" при открытии */
+.header.open .header__burger-btn span:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.header.open .header__burger-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.open .header__burger-btn span:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+/* --- МЕДИА-ЗАПРОСЫ ДЛЯ АДАПТИВНОСТИ --- */
+
+/* Планшеты и небольшие десктопы (до 1024px) */
+@media (max-width: 1024px) {
+  .header {
+    padding: 20px 40px;
+  }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+
+  /* Показываем бургер-кнопку */
+  .header__burger-btn {
+    display: block;
+  }
+
+  /* Скрываем навигацию по умолчанию и стилизуем под мобильное меню */
+  .header__nav {
+    display: none; /* Скрываем по умолчанию */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* На весь экран */
+    background-color: rgba(40, 75, 120, 0.95); /* Полупрозрачный синий фон */
+    backdrop-filter: blur(5px);
+    
+    /* Центрируем ссылки */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  /* Класс .show, который добавит JS */
+  .header__nav.show {
+    display: flex;
+  }
+
+  /* Увеличиваем ссылки в мобильном меню для удобства */
+  .header__link {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
 
 * {
   margin: 0;
@@ -61,12 +159,13 @@ a {
   color: #fff;
 }
 
+@media (min-width: 1024px) {
 .header__nav {
   display: flex;
   gap: 30px;
   align-items: center;
 }
-
+}
 .header__link {
   font-weight: 600;
   font-size: 12px;

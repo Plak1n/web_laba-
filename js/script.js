@@ -1,60 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Универсальная функция для модалок
+
+  // --- 1. ЛОГИКА МОДАЛЬНЫХ ОКОН (из твоего кода) ---
   function setupModal(modalId, openBtnId, closeBtnId) {
-    const modal   = document.getElementById(modalId);
+    const modal = document.getElementById(modalId);
     const openBtn = document.getElementById(openBtnId);
     const closeBtn = document.getElementById(closeBtnId);
 
     if (!modal || !openBtn || !closeBtn) return;
 
-    // открыть окно
+    // Открыть окно
     openBtn.addEventListener('click', () => {
       modal.classList.add('show');
     });
 
-    // закрыть по крестику
+    // Закрыть по крестику
     closeBtn.addEventListener('click', () => {
       modal.classList.remove('show');
     });
 
-    // закрыть по клику вне формы
+    // Закрыть по клику вне формы
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.classList.remove('show');
       }
     });
   }
-
-  // Модалка "Оформить карту"
+  // Вызываем функцию для двух модалок
   setupModal('modal', 'ctaBtn', 'closeModal');
-
-  // Модалка "Поддержка"
   setupModal('feedbackModal', 'openFeedbackBtn', 'closeFeedbackModal');
 
-  // ---------- ОТПРАВКА ЧЕРЕЗ mailto ----------
 
-  const TO_EMAIL = 'jamaraxi806@gmail.com'; // куда придут письма
+  // --- 2. ЛОГИКА ОТПРАВКИ ФОРМ ЧЕРЕЗ mailto (из твоего кода) ---
+  const TO_EMAIL = 'jamaraxi806@gmail.com';
 
   function setupMailtoForm(formId, modalId, subjectBuilder, bodyBuilder) {
-    const form  = document.getElementById(formId);
+    const form = document.getElementById(formId);
     const modal = document.getElementById(modalId);
 
     if (!form) return;
 
     form.addEventListener('submit', (e) => {
-      e.preventDefault(); // отключаем стандартный submit
+      e.preventDefault();
 
       const subject = subjectBuilder(form);
-      const body    = bodyBuilder(form);
+      const body = bodyBuilder(form);
 
       const mailtoLink =
         'mailto:' + encodeURIComponent(TO_EMAIL) +
         '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(body);
 
-      // Открываем почтовый клиент пользователя
       window.location.href = mailtoLink;
-
       alert('Сейчас откроется ваш почтовый клиент для отправки письма.');
 
       form.reset();
@@ -63,46 +59,57 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
   // Форма заявки на карту
   setupMailtoForm(
-    'cardForm',
-    'modal',
-    // тема письма
+    'cardForm', 'modal',
     (form) => 'Заявка на оформление карты НекстФин',
-    // тело письма
     (form) => {
-      const name  = form.querySelector('[name="name"]')?.value || '';
+      const name = form.querySelector('[name="name"]')?.value || '';
       const email = form.querySelector('[name="email"]')?.value || '';
       const phone = form.querySelector('[name="phone"]')?.value || '';
-
-      return (
-        'Новая заявка на оформление карты:\r\n' +
-        'Имя: ' + name + '\r\n' +
-        'Email: ' + email + '\r\n' +
-        'Телефон: ' + phone + '\r\n'
-      );
+      return `Новая заявка на оформление карты:\r\nИмя: ${name}\r\nEmail: ${email}\r\nТелефон: ${phone}\r\n`;
     }
   );
-
   // Форма обратной связи
   setupMailtoForm(
-    'feedbackForm',
-    'feedbackModal',
-    // тема письма
+    'feedbackForm', 'feedbackModal',
     (form) => 'Обратная связь с сайта НекстФин',
-    // тело письма
     (form) => {
-      const name    = form.querySelector('[name="name"]')?.value || '';
-      const email   = form.querySelector('[name="email"]')?.value || '';
+      const name = form.querySelector('[name="name"]')?.value || '';
+      const email = form.querySelector('[name="email"]')?.value || '';
       const message = form.querySelector('[name="message"]')?.value || '';
-
-      return (
-        'Сообщение с формы обратной связи:\r\n' +
-        'Имя: ' + name + '\r\n' +
-        'Email: ' + email + '\r\n' +
-        'Сообщение:\r\n' + message + '\r\n'
-      );
+      return `Сообщение с формы обратной связи:\r\nИмя: ${name}\r\nEmail: ${email}\r\nСообщение:\r\n${message}\r\n`;
     }
   );
+
+
+  // --- 3. ЛОГИКА БУРГЕР-МЕНЮ (добавляем её сюда) ---
+  const burgerBtn = document.getElementById('burger');
+  const navMenu = document.getElementById('nav');
+  const header = document.querySelector('.header');
+  const navLinks = document.querySelectorAll('.header__link');
+
+  if (burgerBtn && navMenu && header) {
+    // Открытие/закрытие по клику на бургер
+    burgerBtn.addEventListener('click', () => {
+      toggleMenu();
+    });
+
+    // Закрытие меню по клику на любую из ссылок
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('show')) {
+          toggleMenu();
+        }
+      });
+    });
+  }
+  
+  // Функция для переключения состояния меню
+  function toggleMenu() {
+    navMenu.classList.toggle('show');
+    header.classList.toggle('open');
+    document.body.classList.toggle('no-scroll');
+  }
+
 });
